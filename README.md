@@ -1,8 +1,8 @@
 # Aplikasi Web dengan Docker
 
-First, run the development server:
 ```bash
-json-server -w db.json -p 5000 
+docker build -t crudweb-docker .
+docker run -p 3000:3000 -p 5000:5000 crudweb-docker
 ```
 
 ## Deskripsi
