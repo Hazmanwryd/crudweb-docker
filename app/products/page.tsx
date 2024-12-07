@@ -1,4 +1,4 @@
-"use client"; // Ensure this is a client component
+"use client"; 
 import { useRouter } from "next/navigation";
 import AddProduct from "./addProduct";
 import DeleteProduct from "./deleteProduct";
@@ -13,7 +13,7 @@ type Product = {
 
 export default function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
-  const router = useRouter(); // Initialize router
+  const router = useRouter();
 
   // Fetching products from the API
   const getProducts = async () => {
@@ -24,7 +24,6 @@ export default function ProductList() {
     setProducts(data);
   };
 
-  // Fetch products when component mounts
   useEffect(() => {
     getProducts();
   }, []);

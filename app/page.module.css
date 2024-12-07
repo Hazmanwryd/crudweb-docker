@@ -269,3 +269,14 @@
     transform: rotate(0deg);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Gerakkan gambar sedikit ke atas */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
