@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": "4021",
+      "title": "Buku",
+      "price": "Rp.100000"
+    },
+    {
+      "id": "bb28",
+      "title": "Pensil",
+      "price": "Rp. 20000"
+    }
+  ]
+}
