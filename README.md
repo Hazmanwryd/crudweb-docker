@@ -1,5 +1,10 @@
 # Aplikasi Web dengan Docker
 
+First, run the development server:
+```bash
+json-server -w db.json -p 5000 
+```
+
 ## Deskripsi
 
 Aplikasi ini adalah contoh aplikasi web yang menggunakan Docker untuk menjalankan aplikasi Next.js dan `json-server` untuk crud product dan harga.
@@ -16,17 +21,6 @@ Aplikasi ini adalah contoh aplikasi web yang menggunakan Docker untuk menjalanka
    cd proyek-anda
    ```
 
-First, run the development server:
-
-```bash
-json-server -w db.json -p 5000 
-# and
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 open
 http://localhost:3000/
 
