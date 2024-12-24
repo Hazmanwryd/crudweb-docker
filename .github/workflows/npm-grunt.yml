@@ -33,3 +33,8 @@ jobs:
 
       - name: Run Grunt tasks
         run: grunt
+
+- name: Debug Grunt Installation
+  run: |
+    npm list grunt
+    npm list grunt-cli
