@@ -30,11 +30,9 @@ jobs:
         run: |
           npm list grunt
           npm list grunt-cli
-
       - name: Run Grunt tasks
         run: grunt
-
-      # Docker-related steps
+        
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -52,16 +50,3 @@ jobs:
         with:
           push: true
           tags: hazmanwryd/cicd:latest
-
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-        
-      - name: Run Grunt tasks using npx
-        run: npx grunt
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Publish Artifact
-        run: echo "Publish steps can go here"
