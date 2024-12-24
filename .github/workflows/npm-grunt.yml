@@ -38,3 +38,6 @@ jobs:
   run: |
     npm list grunt
     npm list grunt-cli
+
+publish:
+  needs: build
