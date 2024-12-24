@@ -53,6 +53,12 @@ jobs:
           push: true
           tags: hazmanwryd/cicd:latest
 
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+        
+      - name: Run Grunt tasks using npx
+        run: npx grunt
+
   publish:
     needs: build
     runs-on: ubuntu-latest
