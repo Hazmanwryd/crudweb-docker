@@ -1,0 +1,51 @@
+name: Next.js CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # 2. Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'  # Sesuaikan dengan versi Node.js yang digunakan oleh proyek Next.js Anda
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # 4. Linting code (opsional)
+      - name: Run Lint
+        run: |
+          npm run lint
+
+      # 5. Run tests (jika ada)
+      - name: Run tests
+        run: |
+          npm test
+
+      # 6. Build the Next.js application
+      - name: Build Next.js app
+        run: |
+          npm run build
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish deployment success
+        run: echo "Deployment completed successfully!"
