@@ -26,8 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Grunt locally
-        run: npm install grunt --save-dev
+      - name: Verify Grunt Installation
+        run: |
+          npm list grunt
+          npm list grunt-cli
 
       - name: Run Grunt tasks
         run: grunt
